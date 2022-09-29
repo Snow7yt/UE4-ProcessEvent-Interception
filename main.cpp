@@ -18,7 +18,20 @@ __forceinline void Hooks::ProcessEvent(UObject* pObject, UFunction* pFunction, v
     print("%s - %i\n", pObject->GetGlobalObjects().GetByIndex(i)->GetFullName().c_str(), i);
   }
   
+  //                                 Func name here
+  if (pFunction->GetFullname().find("ALionfishLion.ReceiveTick").c_str()) != std::string::npos)
+  {
+    LionFish = (ALionfishLion_Character_BP_C*)pObject;
+    
+    //if you want to block this function, (it would need to be the name of the function above where RecieveTick is, just return here
+    // return;
+  }
   
+  //This is for if you want to 'access' the class, if you just want to block it this isnt needed, only the return above is.
+  if (LionFish)
+  {
+    LionFish->Server_Request_Jump();
+  }
   
   return oProcessEvent(pObject, pFunction, params);
 }
