@@ -1,7 +1,7 @@
 UE4 Process Event Intereception
 
 "Intercept" and hook / access functions and classes that you might not normally be able or easily be able to in a UE4 game through process event.
-Allows you to adjust values and call functions that might not be easily accessabile in classes that have weird heirarchy/parents.
+Allows you to adjust values and call functions that might not be easily accessabile in classes that have weird heirarchy/parents. It also allows you to block function calls if that is something you are interested in and werent able to figure out.
 
 Example: 
 UObject -> AActor -> AEmitter -> APrimalEmitterSpawnable -> etc...
