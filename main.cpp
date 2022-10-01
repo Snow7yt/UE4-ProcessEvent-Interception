@@ -12,12 +12,9 @@ struct{
 
 __forceinline void Hooks::ProcessEvent(UObject* pObject, UFunction* pFunction, void* params)
 {
-  //Start off by logging the names and #'s
-  for (int i = 0; i < pObject->GetGlobalObjects().Num(); i++)
-  {
-    print("%s - %i\n", pObject->GetGlobalObjects().GetByIndex(i)->GetFullName().c_str(), i);
-  }
-  
+  //Start off by logging the functions that get called
+	print("%s\n==============================================\n", pFunction->GetFullName().c_str());
+
   //                                 Func name here
   if (pFunction->GetFullname().find("ALionfishLion.ReceiveTick").c_str()) != std::string::npos)
   {
